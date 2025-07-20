@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Link Detector",
+    "version": "1.0",
+    "description": "Detect phishing links in social media posts and check manually entered URLs",
+    "permissions": ["activeTab"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
